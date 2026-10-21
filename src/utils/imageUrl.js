@@ -1,4 +1,4 @@
-const API_BASE = process.env.REACT_APP_API_URL?.replace("/api", "") || "https://localhost:7252";
+const API_BASE = process.env.REACT_APP_API_URL?.replace("/api", "") || "https://laptopsinlahore.runasp.net";
 
 export const getImageUrl = (imagePath) => {
   if (!imagePath) return "/no_image.png";

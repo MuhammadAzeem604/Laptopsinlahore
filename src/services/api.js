@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.REACT_APP_API_URL || "https://localhost:7252/api";
+const API_BASE_URL = process.env.REACT_APP_API_URL || "https://laptopsinlahore.runasp.net/api";
 
 /**
  * Builds a query string, skipping empty / null / undefined values.
