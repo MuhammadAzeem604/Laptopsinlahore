@@ -1,0 +1,438 @@
+/**
+ * Admin panel styles.
+ *
+ * The site theme (Molla) is built on Bootstrap 4 and expects a very specific
+ * page skeleton:
+ *
+ *   .page-wrapper            -> flex column, full height
+ *     .header                -> site header
+ *     .main                  -> flex: 1
+ *       .page-content
+ *         .container
+ *
+ * The admin pages were missing that skeleton and were also using Bootstrap 5
+ * class names (form-select, me-2, gap-2, form-label) which do not exist in
+ * the bundled Bootstrap 4 build. Everything admin specific lives here so the
+ * storefront styles stay untouched.
+ */
+
+/* ---------------------------------------------------------------- layout */
+
+.admin-layout {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f7f8fa;
+}
+
+.admin-layout .main {
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+.admin-layout .page-content {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* ---------------------------------------------------------------- header */
+
+.admin-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 0.1rem solid #ebebeb;
+  box-shadow: 0 2px 8px rgba(51, 51, 51, 0.04);
+}
+
+.admin-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1188px;
+  max-width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.admin-brand {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: #65b650;
+  text-decoration: none;
+  padding: 1.6rem 0;
+}
+
+.admin-brand:hover,
+.admin-brand:focus {
+  color: #65b650;
+  text-decoration: none;
+}
+
+.admin-brand .admin-brand-badge {
+  display: inline-block;
+  margin-left: 0.8rem;
+  padding: 0.2rem 0.8rem;
+  border-radius: 0.3rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #fff;
+  background-color: #65b650;
+}
+
+.admin-nav {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.admin-nav > li {
+  margin-left: 2.6rem;
+}
+
+.admin-nav a,
+.admin-nav button {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  color: #777;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.25s;
+}
+
+.admin-nav a:hover,
+.admin-nav a:focus,
+.admin-nav button:hover,
+.admin-nav button:focus {
+  color: #65b650;
+  text-decoration: none;
+}
+
+.admin-nav .admin-nav-active a {
+  color: #65b650;
+}
+
+/* ---------------------------------------------------------------- page head */
+
+.admin-page-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.1rem solid #ebebeb;
+}
+
+.admin-page-head .title {
+  margin: 0;
+  font-size: 2.6rem;
+}
+
+/* ---------------------------------------------------------------- login */
+
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 5rem 0;
+  background-color: #333;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.login-page .login-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  opacity: 0.45;
+  background-color: #333;
+}
+
+.login-page .container {
+  position: relative;
+  z-index: 2;
+}
+
+.login-page .form-box {
+  max-width: 575px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  padding: 3.7rem 6rem 6.4rem;
+  box-shadow: 0 3px 16px rgba(51, 51, 51, 0.1);
+}
+
+.login-page .form-box .title {
+  margin: 0 0 0.5rem;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.login-page .form-box .form-group {
+  margin-bottom: 1.3rem;
+}
+
+.login-page .form-box .form-label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.login-page .form-box .form-control {
+  height: 4.4rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.4rem;
+  color: #666;
+  border: 0.1rem solid #ebebeb;
+  border-radius: 0.2rem;
+}
+
+.login-page .form-box .form-control:focus {
+  border-color: #65b650;
+  box-shadow: none;
+}
+
+.login-page .form-box .btn-order {
+  min-width: 115px;
+  padding: 0.85rem 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.login-page .alert {
+  font-size: 1.3rem;
+}
+
+/* ---------------------------------------------------------------- tables */
+
+.admin-table-wrapper {
+  background-color: #fff;
+  border: 0.1rem solid #ebebeb;
+  border-radius: 0.3rem;
+  box-shadow: 0 2px 8px rgba(51, 51, 51, 0.04);
+  overflow: hidden;
+}
+
+.admin-table-wrapper .table {
+  margin-bottom: 0;
+  color: #666;
+}
+
+.admin-table-wrapper .table thead th {
+  padding: 1.4rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #333;
+  background-color: #f7f8fa;
+  border-top: 0;
+}
+
+.admin-table-wrapper .table tbody td {
+  padding: 1.2rem 1.5rem;
+  vertical-align: middle;
+  font-size: 1.4rem;
+}
+
+.admin-table-wrapper .table img {
+  border-radius: 0.3rem;
+  border: 0.1rem solid #ebebeb;
+}
+
+.admin-empty {
+  padding: 4rem 1.5rem;
+  text-align: center;
+  color: #999;
+}
+
+/* ---------------------------------------------------------------- forms */
+
+.admin-form {
+  background-color: #fff;
+  border: 0.1rem solid #ebebeb;
+  border-radius: 0.3rem;
+  box-shadow: 0 2px 8px rgba(51, 51, 51, 0.04);
+  padding: 3rem;
+}
+
+.admin-form .form-label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.admin-form .form-control,
+.admin-form .custom-select {
+  height: 4.4rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.4rem;
+  color: #666;
+  border: 0.1rem solid #ebebeb;
+  border-radius: 0.2rem;
+}
+
+.admin-form .custom-select {
+  height: 4.4rem;
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+}
+
+.admin-form textarea.form-control {
+  height: auto;
+}
+
+.admin-form .form-control:focus,
+.admin-form .custom-select:focus {
+  border-color: #65b650;
+  box-shadow: none;
+}
+
+.admin-form .form-check {
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.admin-form .form-check-input {
+  position: static;
+  float: none;
+  margin: 0 0.8rem 0 0;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.admin-form .form-check-label {
+  margin-bottom: 0;
+  font-size: 1.4rem;
+  color: #666;
+}
+
+/* image picker */
+
+.admin-image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.admin-image-grid .admin-image-item {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.admin-image-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.3rem;
+  border: 0.1rem solid #ebebeb;
+}
+
+.admin-image-grid .admin-image-remove {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  padding: 0;
+  line-height: 1;
+  font-size: 1.6rem;
+  color: #fff;
+  background-color: #dc3545;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.admin-image-grid .admin-image-remove:hover,
+.admin-image-grid .admin-image-remove:focus {
+  background-color: #c82333;
+}
+
+/* ---------------------------------------------------------------- buttons */
+
+.admin-layout .btn {
+  border-radius: 0.2rem;
+  font-weight: 500;
+}
+
+.admin-layout .btn-primary {
+  background-color: #65b650;
+  border-color: #65b650;
+}
+
+.admin-layout .btn-primary:hover,
+.admin-layout .btn-primary:focus,
+.admin-layout .btn-primary:not(:disabled):not(.disabled):active {
+  background-color: #559e46;
+  border-color: #559e46;
+}
+
+.admin-layout .btn-outline-primary-2 {
+  color: #65b650;
+  border: 0.1rem solid #65b650;
+}
+
+.admin-layout .btn-outline-primary-2:hover,
+.admin-layout .btn-outline-primary-2:focus {
+  color: #fff;
+  background-color: #65b650;
+  border-color: #65b650;
+}
+
+/* ---------------------------------------------------------------- responsive */
+
+@media screen and (max-width: 767px) {
+  .admin-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-nav {
+    width: 100%;
+    padding-bottom: 1.2rem;
+    flex-wrap: wrap;
+  }
+
+  .admin-nav > li {
+    margin-left: 0;
+    margin-right: 2rem;
+  }
+
+  .login-page .form-box {
+    padding: 3rem 2rem 3.5rem;
+  }
+
+  .admin-form {
+    padding: 2rem 1.5rem;
+  }
+}

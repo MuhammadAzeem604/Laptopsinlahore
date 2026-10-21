@@ -1,0 +1,719 @@
+/**
+ * LIL brand theme.
+ *
+ * Colours are taken from the shop logo (public/logo.jpeg):
+ *   primary blue  #2978bd
+ *   accent green  #65b650
+ *   dark          #282828
+ *   light tint    #f4f7ff
+ *
+ * Everything in this file uses its own `lil-` class names so it never fights
+ * with the Molla theme styles (main.css / skin.css).
+ */
+
+:root {
+  --lil-blue: #2978bd;
+  --lil-blue-dark: #1f5f96;
+  --lil-blue-soft: #e8f1fa;
+  --lil-green: #65b650;
+  --lil-green-dark: #4f9140;
+  --lil-dark: #282828;
+  --lil-darker: #1d2024;
+  --lil-light: #f4f7ff;
+  --lil-muted: #6c757d;
+  --lil-line: #e4e9f0;
+  --lil-radius: 14px;
+  --lil-shadow: 0 12px 30px rgba(40, 40, 40, 0.08);
+  --lil-shadow-hover: 0 18px 40px rgba(41, 120, 189, 0.18);
+}
+
+/* ------------------------------------------------------------------ logo */
+
+.header .logo img,
+.header .logo .site-logo {
+  width: auto;
+  max-width: 240px;
+  height: 58px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* ---------------------------------------------------------------- buttons */
+
+.lil-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.9rem;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  text-decoration: none !important;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.lil-btn--primary {
+  background-color: var(--lil-blue);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(41, 120, 189, 0.28);
+}
+.lil-btn--primary:hover,
+.lil-btn--primary:focus {
+  background-color: var(--lil-blue-dark);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.lil-btn--green {
+  background-color: var(--lil-green);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(101, 182, 80, 0.3);
+}
+.lil-btn--green:hover,
+.lil-btn--green:focus {
+  background-color: var(--lil-green-dark);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.lil-btn--outline {
+  background-color: transparent;
+  border-color: var(--lil-blue);
+  color: var(--lil-blue);
+}
+.lil-btn--outline:hover,
+.lil-btn--outline:focus {
+  background-color: var(--lil-blue);
+  color: #fff;
+}
+
+.lil-btn--light {
+  background-color: #fff;
+  color: var(--lil-dark);
+}
+.lil-btn--light:hover,
+.lil-btn--light:focus {
+  background-color: var(--lil-light);
+  color: var(--lil-dark);
+}
+
+.lil-btn--sm {
+  padding: 0.55rem 1.3rem;
+  font-size: 1.3rem;
+}
+
+/* --------------------------------------------------------------- sections */
+
+.lil-section {
+  padding: 4.5rem 0;
+}
+.lil-section--tint {
+  background-color: var(--lil-light);
+}
+.lil-section--tight {
+  padding: 3rem 0;
+}
+
+.lil-eyebrow {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  color: var(--lil-green);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.lil-section__head {
+  max-width: 680px;
+  margin: 0 auto 2.8rem;
+  text-align: center;
+}
+.lil-section__head--left {
+  margin-left: 0;
+  text-align: left;
+}
+
+.lil-section__title {
+  margin: 0 0 0.8rem;
+  color: var(--lil-dark);
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.lil-section__sub {
+  margin: 0;
+  color: var(--lil-muted);
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------------------------- hero */
+
+.lil-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 3.2rem 0 3.6rem;
+  background: linear-gradient(120deg, #f4f7ff 0%, #ffffff 55%, #eaf3ec 100%);
+}
+.lil-hero::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  top: -120px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: rgba(41, 120, 189, 0.07);
+}
+.lil-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 1.1rem;
+  margin-bottom: 1.4rem;
+  border-radius: 50px;
+  background-color: var(--lil-blue-soft);
+  color: var(--lil-blue-dark);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.lil-hero__title {
+  margin: 0 0 1.2rem;
+  color: var(--lil-dark);
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+.lil-hero__title span {
+  color: var(--lil-blue);
+}
+.lil-hero__text {
+  max-width: 520px;
+  margin: 0 0 2rem;
+  color: var(--lil-muted);
+  font-size: 1.7rem;
+  line-height: 1.65;
+}
+.lil-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-bottom: 2.2rem;
+}
+.lil-hero__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.lil-hero__facts li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--lil-dark);
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+.lil-hero__facts i {
+  color: var(--lil-green);
+  font-size: 1.5rem;
+}
+
+.lil-hero__media {
+  position: relative;
+  z-index: 1;
+}
+.lil-hero__media img {
+  display: block;
+  width: 100%;
+  max-height: 430px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: var(--lil-shadow);
+}
+.lil-hero__tag {
+  position: absolute;
+  left: -12px;
+  bottom: -18px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.6rem;
+  border-radius: 14px;
+  background-color: var(--lil-dark);
+  color: #fff;
+  box-shadow: var(--lil-shadow);
+}
+.lil-hero__tag strong {
+  color: var(--lil-green);
+  font-size: 2.4rem;
+  line-height: 1.1;
+}
+.lil-hero__tag span {
+  font-size: 1.3rem;
+}
+
+/* ------------------------------------------------------------ quick links */
+
+.lil-quicklinks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1.2rem;
+}
+.lil-quicklink {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.3rem 1.5rem;
+  border: 1px solid var(--lil-line);
+  border-radius: var(--lil-radius);
+  background-color: #fff;
+  color: var(--lil-dark);
+  text-decoration: none !important;
+  transition: all 0.25s ease;
+}
+.lil-quicklink:hover,
+.lil-quicklink:focus {
+  border-color: var(--lil-blue);
+  box-shadow: var(--lil-shadow-hover);
+  transform: translateY(-3px);
+}
+.lil-quicklink__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background-color: var(--lil-blue-soft);
+  color: var(--lil-blue);
+  font-size: 2rem;
+}
+.lil-quicklink__title {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.lil-quicklink__text {
+  display: block;
+  color: var(--lil-muted);
+  font-size: 1.3rem;
+}
+
+/* ----------------------------------------------------------------- brands */
+
+.lil-brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.4rem;
+}
+.lil-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.8rem 1rem;
+  border: 1px solid var(--lil-line);
+  border-radius: var(--lil-radius);
+  background-color: #fff;
+  text-decoration: none !important;
+  transition: all 0.25s ease;
+}
+.lil-brand:hover,
+.lil-brand:focus {
+  border-color: var(--lil-blue);
+  box-shadow: var(--lil-shadow-hover);
+  transform: translateY(-4px);
+}
+.lil-brand__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 68px;
+  margin-bottom: 1rem;
+}
+.lil-brand__logo img {
+  max-width: 100%;
+  max-height: 68px;
+  object-fit: contain;
+}
+.lil-brand__name {
+  color: var(--lil-dark);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* -------------------------------------------------------------- features */
+
+.lil-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.6rem;
+}
+.lil-feature {
+  padding: 1.9rem 1.7rem;
+  border: 1px solid var(--lil-line);
+  border-radius: var(--lil-radius);
+  background-color: #fff;
+}
+.lil-feature__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 1.1rem;
+  border-radius: 14px;
+  background-color: var(--lil-blue-soft);
+  color: var(--lil-blue);
+  font-size: 2.4rem;
+}
+.lil-feature__title {
+  margin: 0 0 0.5rem;
+  color: var(--lil-dark);
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+.lil-feature__text {
+  margin: 0;
+  color: var(--lil-muted);
+  font-size: 1.45rem;
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------------------ product card */
+
+.lil-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.6rem;
+}
+
+.lil-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--lil-line);
+  border-radius: var(--lil-radius);
+  background-color: #fff;
+  transition: all 0.25s ease;
+}
+.lil-card:hover {
+  border-color: var(--lil-blue);
+  box-shadow: var(--lil-shadow-hover);
+  transform: translateY(-4px);
+}
+
+.lil-card__media {
+  position: relative;
+  display: block;
+  padding: 1.2rem;
+  background-color: var(--lil-light);
+}
+.lil-card__media img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: contain;
+}
+.lil-card__badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+  background-color: var(--lil-green);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.lil-card__body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1.3rem 1.4rem 1.5rem;
+}
+.lil-card__cat {
+  color: var(--lil-green);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.lil-card__title {
+  margin: 0.5rem 0 0.8rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.lil-card__title a {
+  color: var(--lil-dark);
+  text-decoration: none !important;
+}
+.lil-card__title a:hover {
+  color: var(--lil-blue);
+}
+.lil-card__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-top: auto;
+  padding-top: 1.1rem;
+}
+.lil-card__price {
+  color: var(--lil-blue);
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.lil-card__price del {
+  display: block;
+  color: #a9b1ba;
+  font-size: 1.35rem;
+  font-weight: 400;
+}
+
+/* ------------------------------------------------------------- cta band */
+
+.lil-cta {
+  position: relative;
+  overflow: hidden;
+  padding: 3.4rem 0;
+  background: linear-gradient(120deg, var(--lil-blue) 0%, var(--lil-blue-dark) 100%);
+}
+.lil-cta::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  bottom: -140px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+}
+.lil-cta__title {
+  margin: 0 0 0.7rem;
+  color: #fff;
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.lil-cta__text {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+.lil-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  justify-content: flex-end;
+}
+
+/* ----------------------------------------------------------------- footer */
+
+.lil-footer {
+  background-color: var(--lil-dark);
+  color: #b7bec6;
+}
+.lil-footer__main {
+  padding: 4rem 0 3rem;
+}
+.lil-footer__title {
+  margin: 0 0 1.6rem;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  position: relative;
+  padding-bottom: 0.9rem;
+}
+.lil-footer__title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 42px;
+  height: 3px;
+  border-radius: 3px;
+  background-color: var(--lil-green);
+}
+.lil-footer__logo {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  background-color: #fff;
+}
+.lil-footer__logo img {
+  display: block;
+  width: auto;
+  max-width: 210px;
+  height: 52px;
+  object-fit: contain;
+  object-position: left center;
+}
+.lil-footer__about {
+  margin: 0 0 1.6rem;
+  font-size: 1.45rem;
+  line-height: 1.7;
+}
+.lil-footer__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.lil-footer__list li {
+  margin-bottom: 0.8rem;
+}
+.lil-footer__list a {
+  color: #b7bec6;
+  font-size: 1.45rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.lil-footer__list a:hover,
+.lil-footer__list a:focus {
+  color: var(--lil-green);
+}
+.lil-footer__shop {
+  margin-bottom: 1.1rem;
+  padding: 1.2rem 1.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+.lil-footer__shop-title {
+  margin: 0 0 0.5rem;
+  color: #fff;
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+.lil-footer__shop p {
+  margin: 0 0 0.4rem;
+  font-size: 1.35rem;
+  line-height: 1.55;
+}
+.lil-footer__shop a {
+  color: var(--lil-blue);
+  font-size: 1.35rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.lil-footer__shop a:hover {
+  color: var(--lil-green);
+}
+.lil-footer__shop i {
+  margin-right: 0.5rem;
+  color: var(--lil-green);
+}
+.lil-footer__contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  font-size: 1.45rem;
+  line-height: 1.5;
+}
+.lil-footer__contact i {
+  margin-top: 0.3rem;
+  color: var(--lil-green);
+  font-size: 1.6rem;
+}
+.lil-footer__contact a {
+  color: #b7bec6;
+  text-decoration: none;
+}
+.lil-footer__contact a:hover {
+  color: var(--lil-green);
+}
+.lil-footer__social {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 1.4rem;
+}
+.lil-footer__social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 1.7rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.lil-footer__social a:hover {
+  background-color: var(--lil-blue);
+  color: #fff;
+}
+.lil-footer__bottom {
+  padding: 1.4rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: var(--lil-darker);
+}
+.lil-footer__bottom p {
+  margin: 0;
+  color: #8b929a;
+  font-size: 1.35rem;
+}
+.lil-footer__bottom a {
+  color: var(--lil-green);
+  text-decoration: none;
+}
+
+/* ------------------------------------------------------------- responsive */
+
+@media (max-width: 991.98px) {
+  .lil-hero__title {
+    font-size: 3.2rem;
+  }
+  .lil-section__title {
+    font-size: 2.3rem;
+  }
+  .lil-cta__actions {
+    justify-content: flex-start;
+    margin-top: 1.6rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .lil-hero {
+    padding: 2.2rem 0 2.6rem;
+  }
+  .lil-hero__title {
+    font-size: 2.6rem;
+  }
+  .lil-hero__tag {
+    left: 0;
+    bottom: -14px;
+  }
+  .lil-section {
+    padding: 3rem 0;
+  }
+  .lil-section__title {
+    font-size: 2rem;
+  }
+  .header .logo img,
+  .header .logo .site-logo {
+    height: 44px;
+  }
+}
