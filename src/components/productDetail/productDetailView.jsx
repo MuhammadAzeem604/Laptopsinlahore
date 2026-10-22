@@ -64,7 +64,7 @@ export default function ProductDetailView({ product }) {
     if (!product.images || product.images.length <= 1) return;
     const interval = setInterval(() => {
       setImageIndex((prev) => (prev + 1) % product.images.length);
-    }, 2000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [product.images]);
 
@@ -88,7 +88,7 @@ export default function ProductDetailView({ product }) {
         scrollPosition = 0;
       }
       gallery.scrollTo({ left: scrollPosition, behavior: "smooth" });
-    }, 2000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [product.images]);
 
