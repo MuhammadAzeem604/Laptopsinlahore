@@ -47,6 +47,8 @@ const readSpecValue = (product, details, keys) => {
 export default function ProductDetailView({ product }) {
   const [activeImage, setActiveImage] = useState("");
 
+  const [imageIndex, setImageIndex] = useState(0);
+
   useEffect(() => {
     const firstImage =
       product.images && product.images.length > 0
@@ -55,7 +57,40 @@ export default function ProductDetailView({ product }) {
           : product.images[0].imageUrl
         : noImage;
     setActiveImage(getImageUrl(firstImage));
+    setImageIndex(0);
   }, [product]);
+
+  useEffect(() => {
+    if (!product.images || product.images.length <= 1) return;
+    const interval = setInterval(() => {
+      setImageIndex((prev) => (prev + 1) % product.images.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [product.images]);
+
+  useEffect(() => {
+    if (!product.images || product.images.length === 0) return;
+    const current = product.images[imageIndex];
+    const imgUrl = getImageUrl(
+      typeof current === "string" ? current : current.imageUrl
+    );
+    setActiveImage(imgUrl);
+  }, [imageIndex, product.images]);
+
+  useEffect(() => {
+    if (!product.images || product.images.length <= 1) return;
+    const gallery = document.getElementById("product-zoom-gallery");
+    if (!gallery) return;
+    let scrollPosition = 0;
+    const interval = setInterval(() => {
+      scrollPosition += 100;
+      if (scrollPosition > gallery.scrollWidth - gallery.clientWidth) {
+        scrollPosition = 0;
+      }
+      gallery.scrollTo({ left: scrollPosition, behavior: "smooth" });
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [product.images]);
 
   const { discountAmount, discountType, discountPrice } = getDiscountAmount(
     product.category,
@@ -113,7 +148,10 @@ export default function ProductDetailView({ product }) {
                         return (
                           <span
                             key={idx}
-                            onClick={() => setActiveImage(imgUrl)}
+                            onClick={() => {
+                              setImageIndex(idx);
+                              setActiveImage(imgUrl);
+                            }}
                             className={`product-gallery-item cursor-pointer ${
                               imgUrl === activeImage ? "active" : ""
                             }`}

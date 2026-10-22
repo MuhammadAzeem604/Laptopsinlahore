@@ -38,6 +38,77 @@
   object-position: left center;
 }
 
+/* ---------------------------------------------------------------- product image gallery auto-scroll */
+
+.product-image-gallery {
+  display: flex;
+  gap: 0.8rem;
+  overflow-x: auto;
+  padding-bottom: 0.8rem;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #f4f4f4;
+}
+.product-image-gallery::-webkit-scrollbar {
+  height: 6px;
+}
+.product-image-gallery::-webkit-scrollbar-track {
+  background: #f4f4f4;
+  border-radius: 3px;
+}
+.product-image-gallery::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+.product-image-gallery::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+.product-gallery-item {
+  flex: 0 0 auto;
+  width: 90px;
+  height: 90px;
+  border: 0.1rem solid #ebebeb;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+.product-gallery-item:hover {
+  border-color: #2978bd;
+}
+.product-gallery-item.active {
+  border-color: #2978bd;
+  box-shadow: 0 0 0 0.2rem rgba(41, 120, 189, 0.2);
+}
+.product-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------------------------------------------------------------- old price strikethrough */
+
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 1.5rem;
+  margin-left: 0.8rem;
+}
+
+/* ---------------------------------------------------------------- product specs (detail page) */
+
+.product-specifications-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+.product-spec-row label {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.product-spec-row .product-spec-value {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
 /* ---------------------------------------------------------------- buttons */
 
 .lil-btn {
@@ -160,106 +231,28 @@
 .lil-hero {
   position: relative;
   overflow: hidden;
-  padding: 3.2rem 0 3.6rem;
-  background: linear-gradient(120deg, #f4f7ff 0%, #ffffff 55%, #eaf3ec 100%);
-}
-.lil-hero::after {
-  content: "";
-  position: absolute;
-  right: -120px;
-  top: -120px;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  background: rgba(41, 120, 189, 0.07);
-}
-.lil-hero__badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.45rem 1.1rem;
-  margin-bottom: 1.4rem;
-  border-radius: 50px;
-  background-color: var(--lil-blue-soft);
-  color: var(--lil-blue-dark);
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-.lil-hero__title {
-  margin: 0 0 1.2rem;
-  color: var(--lil-dark);
-  font-size: 4rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-}
-.lil-hero__title span {
-  color: var(--lil-blue);
-}
-.lil-hero__text {
-  max-width: 520px;
-  margin: 0 0 2rem;
-  color: var(--lil-muted);
-  font-size: 1.7rem;
-  line-height: 1.65;
-}
-.lil-hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.9rem;
-  margin-bottom: 2.2rem;
-}
-.lil-hero__facts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem 1.8rem;
-  margin: 0;
   padding: 0;
-  list-style: none;
 }
-.lil-hero__facts li {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  color: var(--lil-dark);
-  font-size: 1.45rem;
-  font-weight: 500;
+.lil-hero__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  text-decoration: none;
 }
-.lil-hero__facts i {
-  color: var(--lil-green);
-  font-size: 1.5rem;
-}
-
 .lil-hero__media {
   position: relative;
-  z-index: 1;
+  width: 100%;
+  height: 430px;
+  overflow: hidden;
 }
 .lil-hero__media img {
   display: block;
   width: 100%;
-  max-height: 430px;
+  height: 100%;
   object-fit: cover;
-  border-radius: 24px;
-  box-shadow: var(--lil-shadow);
-}
-.lil-hero__tag {
-  position: absolute;
-  left: -12px;
-  bottom: -18px;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem 1.6rem;
-  border-radius: 14px;
-  background-color: var(--lil-dark);
-  color: #fff;
-  box-shadow: var(--lil-shadow);
-}
-.lil-hero__tag strong {
-  color: var(--lil-green);
-  font-size: 2.4rem;
-  line-height: 1.1;
-}
-.lil-hero__tag span {
-  font-size: 1.3rem;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 /* ------------------------------------------------------------ quick links */
@@ -696,9 +689,6 @@
 }
 
 @media (max-width: 575.98px) {
-  .lil-hero {
-    padding: 2.2rem 0 2.6rem;
-  }
   .lil-hero__title {
     font-size: 2.6rem;
   }
@@ -716,4 +706,215 @@
   .header .logo .site-logo {
     height: 44px;
   }
+}
+
+/* ------------------------------------------------------------- sticky navbar */
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------------------------------------------------- new arrivals horizontal rows */
+
+.lil-new-arrivals .lil-arrivals-row {
+  margin-bottom: 3rem;
+}
+.lil-new-arrivals .lil-arrivals__cat-title {
+  margin: 0 0 1rem;
+  color: var(--lil-dark);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.lil-new-arrivals .lil-arrivals__nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.lil-new-arrivals .lil-arrivals__track {
+  display: flex;
+  gap: 1.6rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #f4f4f4;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+}
+.lil-new-arrivals .lil-arrivals__track::-webkit-scrollbar {
+  height: 6px;
+}
+.lil-new-arrivals .lil-arrivals__track::-webkit-scrollbar-track {
+  background: #f4f4f4;
+  border-radius: 3px;
+}
+.lil-new-arrivals .lil-arrivals__track::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+.lil-new-arrivals .lil-arrivals__track::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+.lil-new-arrivals .lil-card {
+  flex: 0 0 auto;
+  width: calc(25% - 1.2rem);
+  min-width: 220px;
+  scroll-snap-align: start;
+}
+.lil-new-arrivals .lil-arrivals__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--lil-line);
+  background-color: #fff;
+  color: var(--lil-dark);
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: all 0.25s ease;
+}
+.lil-new-arrivals .lil-arrivals__arrow--left {
+  left: -55px;
+}
+.lil-new-arrivals .lil-arrivals__arrow--right {
+  right: -55px;
+}
+.lil-new-arrivals .lil-arrivals__arrow:hover {
+  border-color: var(--lil-blue);
+  color: var(--lil-blue);
+  background-color: var(--lil-blue-soft);
+}
+.lil-new-arrivals .lil-arrivals__arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ------------------------------------------------------------- promotional banner */
+
+.lil-promo-banner {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  background-color: #fff;
+}
+.lil-promo__media {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+.lil-promo__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.lil-promo__content {
+  padding: 3rem 0;
+  text-align: center;
+}
+.lil-promo__badge {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: 50px;
+  background-color: var(--lil-green);
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.lil-promo__title {
+  margin: 0 0 1rem;
+  color: var(--lil-dark);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.lil-promo__title span {
+  color: var(--lil-blue);
+}
+.lil-promo__text {
+  margin: 0 auto 1.8rem;
+  color: var(--lil-muted);
+  font-size: 1.6rem;
+  line-height: 1.6;
+  width: 95%;
+}
+.lil-promo__cta {
+  padding: 0.9rem 2.2rem;
+  font-size: 1.6rem;
+}
+
+@media (max-width: 991.98px) {
+  .lil-promo__title {
+    font-size: 2.4rem;
+  }
+  .lil-promo__text {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .lil-promo__media {
+    height: 280px;
+  }
+  .lil-promo__title {
+    font-size: 2rem;
+  }
+  .lil-promo__text {
+    font-size: 1.3rem;
+  }
+  .lil-promo__cta {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.4rem;
+  }
+}
+
+/* ------------------------------------------------------------- brands grid */
+
+.lil-brands-strip {
+  background-color: #fff;
+}
+.lil-brands__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1.6rem;
+}
+.lil-brand-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  text-decoration: none !important;
+  border: 1px solid var(--lil-line);
+  border-radius: var(--lil-radius);
+  background-color: #fff;
+  transition: all 0.25s ease;
+}
+.lil-brand-link:hover,
+.lil-brand-link:focus {
+  border-color: var(--lil-blue);
+  box-shadow: var(--lil-shadow-hover);
+  transform: translateY(-3px);
+}
+.lil-brand-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.25s ease;
+}
+.lil-brand-link:hover .lil-brand-logo,
+.lil-brand-link:focus .lil-brand-logo {
+  opacity: 1;
 }
