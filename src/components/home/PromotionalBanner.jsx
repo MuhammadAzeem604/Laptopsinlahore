@@ -7,9 +7,9 @@ import bannerImage from "../../assets/images/slide-1.jpg";
 export default function PromotionalBanner() {
   return (
     <section className="lil-promo-banner">
-      <div className="lil-hero__media">
+      {/* <div className="lil-hero__media">
           <img src="/IMG_5243.JPG" alt="Laptops on sale in Lahore" />
-        </div>
+        </div> */}
 
       <div className="container lil-promo__content">
         <p className="lil-promo__text">
