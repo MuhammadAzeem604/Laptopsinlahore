@@ -34,7 +34,7 @@ export default function Footer() {
             <div className="col-lg-4 mb-4 mb-lg-0">
               <span className="lil-footer__logo">
                 <img
-                  src={getPublicAsset("logo.jpg")}
+                  src={getPublicAsset("logo.JPG")}
                   alt="Lahore Laptops"
                 />
               </span>

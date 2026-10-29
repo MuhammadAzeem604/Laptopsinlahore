@@ -30,7 +30,7 @@ export default function TopSearchBar({
             {/* the logo is a plain file in /public -> the url never changes */}
             <img
               className="site-logo"
-              src={getPublicAsset("logo.jpg")}
+              src={getPublicAsset("logo.JPG")}
               alt="Lahore Laptops"
             />
           </Link>
