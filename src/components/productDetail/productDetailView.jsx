@@ -224,9 +224,9 @@ export default function ProductDetailView({ product }) {
                   </div>
                 </div>
 
-                <div className="product-details-footer">
-                  <div className="product-cat">
-                    <span>Category:</span>
+                 <div className="product-details-footer d-flex justify-content-between align-items-center">
+                   <div className="product-cat">
+                     <span>Category:</span>
                     <Link
                       className="none-text-decoration"
                       to={{
@@ -243,12 +243,12 @@ export default function ProductDetailView({ product }) {
 
                    <div className="product-cat mt-2">
                      <a
-                       className="btn btn-success btn-sm"
+                       className="lil-whatsapp-btn"
                        href={contactInfo.whatsappUrl}
                        target="_blank"
                        rel="noopener noreferrer"
                      >
-                       <i className="icon-whatsapp" /> WhatsApp
+                       <i className="icon-whatsapp" /> Chat on WhatsApp
                      </a>
                    </div>
                  </div>

@@ -1,4 +1,25 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800");
+
+.lil-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #25d366;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+  
+}
+.lil-whatsapp-btn:hover {
+  background: #1ebe57;
+  color: #fff;
+}
+.lil-whatsapp-btn i {
+  font-size: 18px;
+}
 .text-third {
   color: #ef837b;
 }
@@ -758,3 +779,4 @@
     margin-bottom: 0.2rem;
   }
 }
+
