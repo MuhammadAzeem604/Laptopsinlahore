@@ -25,7 +25,7 @@ export default function HomeBanner() {
           </Link>
         </div>
         <div className="lil-hero__media">
-          <img src="/homebanner.png" alt="Laptops on sale in Lahore" />
+          <img src="/banner.jpeg" alt="Laptops on sale in Lahore" />
         </div>
       </div>
     </section>

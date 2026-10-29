@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Laptops, Accessories } from "../../router/routes";
 import { categoryType } from "../../constants";
+import { contactInfo } from "../../constants/contact";
 import { useEffect, useState } from "react";
 import { noImage } from "../../utils/images";
 import { getDiscountAmount } from "../../helpers/products";
@@ -235,11 +236,22 @@ export default function ProductDetailView({ product }) {
                             : Accessories,
                         state: { category: product.category },
                       }}
-                    >
-                      {product.category?.name}
-                    </Link>
-                  </div>
-                </div>
+                     >
+                       {product.category?.name}
+                     </Link>
+                   </div>
+
+                   <div className="product-cat mt-2">
+                     <a
+                       className="btn btn-success btn-sm"
+                       href={contactInfo.whatsappUrl}
+                       target="_blank"
+                       rel="noopener noreferrer"
+                     >
+                       <i className="icon-whatsapp" /> WhatsApp
+                     </a>
+                   </div>
+                 </div>
               </div>
             </div>
           </div>
