@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Laptops } from "../../router/routes";
+import { Laptops, Accessories } from "../../router/routes";
 
 /**
  * Hero of the home page.
@@ -19,9 +19,17 @@ export default function HomeBanner() {
           <p className="lil-section__sub">
           Shop new and used laptops in Lahore at the best prices. Explore HP, Dell, Lenovo, Acer and Apple MacBook laptops at affordable rates.
           </p>
-          <Link to={Laptops} className="lil-hero__cta">
-            Shop Now <span className="lil-hero__cta-arrow">→</span>
-          </Link>
+          <div className="lil-hero__actions">
+            <Link to={Laptops} className="lil-hero__cta">
+              Shop Laptops <span className="lil-hero__cta-arrow">→</span>
+            </Link>
+            <Link to={Accessories} className="lil-hero__cta">
+            Parts & Accessories <span className="lil-hero__cta-arrow">→</span>
+            </Link>
+          </div>
+          <p className="lil-section__sub" style={{ marginTop: "15px" }}>
+            Buy Laptops, Chargers, RAM, SSDs, Hard Drives & More
+          </p>
         </div>
         <div className="lil-hero__media">
           <img src="/banner.jpeg" alt="Laptops on sale in Lahore" />

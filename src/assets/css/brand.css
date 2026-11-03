@@ -327,6 +327,14 @@
 .lil-hero__cta:hover .lil-hero__cta-arrow {
   transform: translateX(4px);
 }
+
+.lil-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
 .lil-hero__link {
   display: block;
   width: 100%;
