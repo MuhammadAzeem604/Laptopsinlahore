@@ -19,7 +19,7 @@ const features = [
   {
     icon: "icon-truck",
     title: "Same day pickup",
-    text: "Visit our Gulberg shop, or order online and collect your laptop from the counter the same day.",
+    text: "Visit our shop, or order online and collect your laptop from the counter the same day.",
   },
   {
     icon: "icon-whatsapp",
@@ -63,8 +63,7 @@ export default function NeedAdvice() {
               <h2 className="lil-cta__title">Not sure which laptop fits?</h2>
               <p className="lil-cta__text">
                 Tell us your budget and what you use it for. We reply on
-                WhatsApp with a short list of the laptops we have in stock -
-                no call centre, just the shop in Gulberg.
+                WhatsApp with a short list of the laptops.
               </p>
             </div>
             <div className="col-lg-4">
@@ -89,12 +88,7 @@ export default function NeedAdvice() {
       <section className="lil-section lil-section--tight">
         <div className="container">
           <p className="lil-section__sub">
-            Looking for a laptop in Lahore? Lahore Laptops keeps new and used
-            business laptops, student notebooks, gaming machines and MacBooks
-            ready for sale, together with chargers, RAM, SSDs and other
-            accessories. Browse by brand or by price, send us your budget and
-            pick the machine up from our Gulberg shop - new and used laptops,
-            parts and accessories in Lahore, Pakistan.
+          CC Laptop brings you the best value in new and used laptops, computer hardware and laptop accessories in Pakistan. Shop quality HP, Dell, Lenovo and Apple laptops, along with affordable RAM, SSDs, hard drives, chargers and replacement parts in Lahore Pakistan.
           </p>
         </div>
       </section>

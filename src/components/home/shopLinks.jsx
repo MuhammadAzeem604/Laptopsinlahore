@@ -35,7 +35,7 @@ export default function ShopLinks() {
             </span>
           </Link>
 
-          <Link className="lil-quicklink" to={AboutUs}>
+          {/* <Link className="lil-quicklink" to={AboutUs}>
             <span className="lil-quicklink__icon">
               <i className="icon-map-marker" />
             </span>
@@ -45,7 +45,7 @@ export default function ShopLinks() {
                 Gulberg, Lahore - open 11am to 9pm
               </span>
             </span>
-          </Link>
+          </Link> */}
 
           <a className="lil-quicklink" href={contactInfo.whatsappUrl}>
             <span className="lil-quicklink__icon">

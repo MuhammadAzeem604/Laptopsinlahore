@@ -125,9 +125,7 @@ export default function NewArrivals() {
 
                         <div className="lil-card__body">
                           <span className="lil-card__cat">
-                            {item.type === categoryType.Laptop
-                              ? "Laptop"
-                              : "Accessories"}
+                            {item.category?.name || (item.type === categoryType.Laptop ? "Laptop" : "Accessories")}
                           </span>
 
                           <h3 className="lil-card__title">

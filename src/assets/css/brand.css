@@ -31,9 +31,8 @@
 
 .header .logo img,
 .header .logo .site-logo {
-  width: auto;
-  max-width: 240px;
-  height: 58px;
+  width: 600px;
+  height: 100px;
   object-fit: contain;
   object-position: left center;
 }
@@ -234,7 +233,7 @@
   padding: 0;
   width: 100%;
   height: 420px;
-  background: #fff;
+  background: #f7f7ed;
 }
 .lil-hero__inner {
   display: flex;
@@ -252,7 +251,7 @@
   height: 100%;
   padding: 3rem 5rem;
   box-sizing: border-box;
-  background: var(--lil-light);
+  background: #f7f7ed;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -691,8 +690,8 @@
 .lil-footer__logo img {
   display: block;
   width: auto;
-  max-width: 210px;
-  height: 52px;
+  max-width: 300px;
+  height: 75px;
   object-fit: contain;
   object-position: left center;
 }
@@ -854,8 +853,9 @@
 
 /* ------------------------------------------------------------- new arrivals horizontal rows */
 
-.lil-new-arrivals .lil-arrivals-row {
+ .lil-new-arrivals .lil-arrivals-row {
   margin-bottom: 3rem;
+  overflow: visible;
 }
 .lil-new-arrivals .lil-arrivals__cat-title {
   margin: 0 0 1rem;
@@ -863,19 +863,23 @@
   font-size: 1.8rem;
   font-weight: 700;
 }
-.lil-new-arrivals .lil-arrivals__nav {
+ .lil-new-arrivals .lil-arrivals__nav {
   position: relative;
-  display: flex;
-  align-items: center;
+  overflow: visible;
 }
-.lil-new-arrivals .lil-arrivals__track {
-  display: flex;
-  gap: 1.6rem;
+ .lil-new-arrivals .lil-arrivals__track {
+  display: block;
   overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: #ccc #f4f4f4;
-  padding: 1rem 0;
+  padding: 1rem 50px 1rem 50px;
   scroll-snap-type: x mandatory;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 0;
 }
 .lil-new-arrivals .lil-arrivals__track::-webkit-scrollbar {
   height: 6px;
@@ -891,11 +895,19 @@
 .lil-new-arrivals .lil-arrivals__track::-webkit-scrollbar-thumb:hover {
   background: #999;
 }
-.lil-new-arrivals .lil-card {
-  flex: 0 0 auto;
-  width: calc(25% - 1.2rem);
-  min-width: 220px;
+ .lil-new-arrivals .lil-card {
+  display: inline-flex;
+  flex-direction: column;
+  vertical-align: top;
+  white-space: normal;
+  width: 280px;
+  min-width: 280px;
+  margin-right: 1.6rem;
   scroll-snap-align: start;
+  font-size: 1.4rem;
+}
+.lil-new-arrivals .lil-card:last-child {
+  margin-right: 0;
 }
 .lil-new-arrivals .lil-arrivals__arrow {
   position: absolute;
@@ -1062,10 +1074,12 @@
     max-width: 100%;
   }
   .container,
-  .lil-section,
+  .lil-section {
+    overflow-x: hidden;
+  }
   .lil-new-arrivals,
   .lil-new-arrivals .lil-arrivals__nav {
-    overflow-x: hidden;
+    overflow-x: visible;
   }
   /* hero */
   .lil-hero {
@@ -1129,8 +1143,8 @@
 
   /* new arrivals */
   .lil-new-arrivals .lil-card {
-    width: calc(50% - 0.4rem);
-    min-width: 130px;
+    width: 240px;
+    min-width: 240px;
   }
   .lil-new-arrivals .lil-arrivals__arrow {
     width: 28px;
@@ -1286,7 +1300,8 @@
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
   .lil-new-arrivals .lil-card {
-    width: calc(50% - 0.6rem);
+    width: 220px;
+    min-width: 220px;
   }
 }
 

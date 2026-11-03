@@ -34,15 +34,12 @@ export default function Footer() {
             <div className="col-lg-4 mb-4 mb-lg-0">
               <span className="lil-footer__logo">
                 <img
-                  src={getPublicAsset("logo.JPG")}
+                  src={getPublicAsset("logo.png")}
                   alt="Lahore Laptops"
                 />
               </span>
               <p className="lil-footer__about">
-                Lahore Laptops sells new and used laptops, parts and accessories
-                from the top brands - HP, Dell, Lenovo, Apple, Asus, Acer and
-                more. Every machine is checked in our Gulberg workshop before
-                it is handed over.
+              CC Laptop is your trusted source for new and used laptops, computer parts and accessories in Pakistan. Shop top brands like HP, Dell, Lenovo, Apple, ASUS and Acer at competitive prices. Every laptop is carefully tested for quality and performance, so you get reliable products at the best value. From RAM and SSDs to hard drives, chargers and accessories, we have everything your laptop needs.
               </p>
               <div className="lil-footer__social">
                 <a

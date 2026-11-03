@@ -32,9 +32,9 @@ export const contactInfo = {
     },
     {
       title: "Shop Location",
-      address: "LG04-basement hafeez center Gulberg, Lahore, Pakistan",
-      phone: "+923234109037",
-      phoneHref: "tel:+923234109037",
+      address: "CC Laptop Shop no S40 2nd Floor Zam Zam Mobile Center Singhpura Baghbanpura Lahore",
+      phone: "+923259008383",
+      phoneHref: "tel:+923259008383",
     },
   ],
 };
