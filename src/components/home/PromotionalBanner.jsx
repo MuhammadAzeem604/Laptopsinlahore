@@ -13,16 +13,7 @@ export default function PromotionalBanner() {
 
       <div className="container lil-promo__content">
         <p className="lil-promo__text">
-          Looking for new and used laptops in Lahore, Pakistan? CC Laptop offers
-          affordable laptops from top brands like HP, Dell, Lenovo, Apple MacBook,
-          Acer, Huawei, ASUS, and Microsoft Surface. Explore the best new laptop
-          prices in Lahore, used laptop prices, second-hand laptops, refurbished
-          laptops, gaming laptops, business laptops, and budget-friendly laptops.
-          Whether you need a laptop for students, office work, freelancing, or
-          entertainment, CC Laptop has options for every budget. Discover quality
-          laptops in Lahore at competitive prices and explore the latest deals on
-          new and used laptops in Lahore with CC Laptop, your destination for
-          affordable laptops in Pakistan.
+        Looking for new and used laptops in Lahore, Pakistan? CC Laptop offers affordable laptops from top brands like HP, Dell, Lenovo, Apple MacBook, Acer, Huawei, ASUS, and Microsoft Surface. Explore the best new laptop prices in Lahore, used laptop prices, second-hand laptops, refurbished laptops, gaming laptops, business laptops, and budget-friendly laptops. Whether you need a laptop for students, office work, freelancing, or entertainment, CC Laptop has options for every budget. Discover quality laptops in Lahore at competitive prices and explore the latest deals on new and used laptops in Lahore with CC Laptop, your destination for affordable laptops in Pakistan.
         </p>
       </div>
     </section>

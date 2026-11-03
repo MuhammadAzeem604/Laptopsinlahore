@@ -33,8 +33,8 @@ export const contactInfo = {
     {
       title: "Shop Location",
       address: "CC Laptop Shop no S40 2nd Floor Zam Zam Mobile Center Singhpura Baghbanpura Lahore",
-      phone: "+923259008383",
-      phoneHref: "tel:+923259008383",
+      phone: "+923259008989",
+      phoneHref: "tel:+923259008989 ",
     },
   ],
 };

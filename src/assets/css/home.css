@@ -678,18 +678,24 @@
 /* Compact CPU / RAM / GPU line rendered on the product cards. */
 
 .product-specs {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.4rem 1.2rem;
-  margin: 0.8rem 0 0.4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 0.4rem 0.8rem;
+  margin: 0.8rem 0 0.6rem;
   font-size: 1.3rem;
   line-height: 1.4;
+  min-height: 3.6rem;
+  align-items: start;
+}
+
+.product-specs-related {
+  width: 100%;
 }
 
 .product-spec {
   display: inline-flex;
-  align-items: center;
+  align-items: baseline;
+  gap: 0.3rem;
 }
 
 .product-spec-label {
@@ -704,6 +710,29 @@
 
 .product-spec-value {
   color: #777;
+}
+
+.product-spec-value.is-empty {
+  color: #999;
+  font-style: italic;
+}
+
+/* Keep product images uniform height in carousels/cards */
+.similar-products .product-media,
+.product .product-media {
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.similar-products .product-media img,
+.product .product-media img,
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 /* Detail page specification rows (Series, CPU, GPU, RAM, ...) */

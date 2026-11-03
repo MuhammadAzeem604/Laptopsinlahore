@@ -51,7 +51,7 @@ export default function SimilarProducts({ product, list }) {
   return (
     <>
       {list.length > 0 && (
-        <>
+        <div className="similar-products">
           <h2 className="title text-center mb-4">Related</h2>
           <OwlCarousel className="slider-items owl-carousel" {...options}>
             {list.map((item, index) => {
@@ -146,7 +146,7 @@ export default function SimilarProducts({ product, list }) {
                       </div>
                     )}
 
-                    <ProductSpecs product={item} />
+                    <ProductSpecs product={item} className="product-specs-related" />
 
                     {/* <div className="ratings-container">
                   <div className="ratings">
@@ -180,7 +180,7 @@ export default function SimilarProducts({ product, list }) {
               );
             })}
           </OwlCarousel>
-        </>
+        </div>
       )}
     </>
   );
