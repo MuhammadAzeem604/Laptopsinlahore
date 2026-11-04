@@ -74,7 +74,7 @@ export default function NeedAdvice() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="icon-whatsapp" /> Chat on WhatsApp
+                  <i className="icon-whatsapp" /> WhatsApp us Now
                 </a>
                 <a className="lil-btn lil-btn--light" href={contactInfo.phoneHref}>
                   <i className="icon-phone" /> {contactInfo.phoneDisplay}

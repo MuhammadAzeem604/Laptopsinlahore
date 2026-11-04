@@ -248,7 +248,7 @@ export default function ProductDetailView({ product }) {
                        target="_blank"
                        rel="noopener noreferrer"
                      >
-                       <i className="icon-whatsapp" /> Chat on WhatsApp
+                       <i className="icon-whatsapp" /> WhatsApp us Now
                      </a>
                    </div>
                  </div>
