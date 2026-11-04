@@ -104,7 +104,7 @@ export const categoriesList = [
   },
   {
     id: 11,
-    name: "Hard Derive",
+    name: "Hard Drive",
     type: "accessory",
     active: true,
     discount: 0,
