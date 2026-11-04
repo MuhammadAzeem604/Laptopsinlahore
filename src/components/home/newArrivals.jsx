@@ -94,7 +94,7 @@ export default function NewArrivals() {
         {typeGroups.map(({ typeName, categories }) => (
           <React.Fragment key={typeName}>
             <h2 className="lil-arrivals__type-title">{typeName}</h2>
-            {Object.keys(categories).map((catName) => {
+            {Object.keys(categories).sort((a, b) => (a.toLowerCase().includes("hp") ? -1 : b.toLowerCase().includes("hp") ? 1 : a.localeCompare(b))).map((catName) => {
               const items = categories[catName];
 
               return (
