@@ -17,7 +17,7 @@ import ProductSpecs from "../product/ProductSpecs";
 export default function NewArrivals() {
   const [list, setList] = useState([]);
   const scrollRefs = useRef({});
-
+//test
   const scrollLeft = useCallback((catName) => {
     const ref = scrollRefs.current[catName];
     if (ref) {
