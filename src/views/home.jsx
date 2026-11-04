@@ -5,7 +5,6 @@ import PromotionalBanner from "../components/home/PromotionalBanner";
 import NewArrivals from "../components/home/newArrivals";
 import NeedAdvice from "../components/home/needAdvice";
 import ShopLinks from "../components/home/shopLinks";
-import FloatingContact from "../components/home/FloatingContact";
 
 export default function Home() {
   return (
@@ -16,7 +15,6 @@ export default function Home() {
       <NewArrivals />
       <NeedAdvice />
       <ShopLinks />
-      <FloatingContact />
     </main>
   );
 }

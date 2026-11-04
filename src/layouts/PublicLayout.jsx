@@ -14,6 +14,7 @@ import Laptops from "../views/Laptops";
 import Accessories from "../views/accessories";
 import AboutUs from "../views/aboutUs";
 import ProductDetail from "../views/product";
+import FloatingContact from "../components/home/FloatingContact";
 
 /**
  * Layout of every public (customer facing) page.
@@ -61,6 +62,7 @@ export default function PublicLayout() {
       </Switch>
 
       <Footer categories={categories} />
+      <FloatingContact />
     </>
   );
 }

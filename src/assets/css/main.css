@@ -749,7 +749,7 @@ blockquote.text-white cite span {
 }
 .header-middle {
   border-bottom: 0.1rem solid #f4f4f4;
-  height: 150px;
+  height: 140px;
 }
 .header-middle .menu > li > a {
   letter-spacing: 0.01em;

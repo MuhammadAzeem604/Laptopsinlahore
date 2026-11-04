@@ -34,7 +34,7 @@
   width: 600px;
   height: 120px;
   object-fit: contain;
-  object-position: left;
+  object-position: left center;
 }
 
 /* ---------------------------------------------------------------- product image gallery auto-scroll */
@@ -693,7 +693,6 @@
   margin-bottom: 1.2rem;
   padding: 0.7rem 1rem;
   border-radius: 12px;
-  width: 100px;
 }
 .lil-footer__logo img {
   display: block;
@@ -870,6 +869,14 @@
   color: var(--lil-dark);
   font-size: 1.8rem;
   font-weight: 700;
+}
+.lil-new-arrivals .lil-arrivals__type-title {
+  margin: 0 0 1.5rem;
+  color: var(--lil-blue);
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
  .lil-new-arrivals .lil-arrivals__nav {
   position: relative;
@@ -1332,8 +1339,8 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-width: 56px;
-  height: 56px;
+  min-width: 72px;
+  height: 72px;
   padding: 0 1rem;
   border-radius: 50px;
   border: none;
@@ -1372,4 +1379,13 @@
   .lil-floating-contact {
     display: flex;
   }
+}
+
+@keyframes lil-blink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.08); }
+}
+
+.lil-floating-contact__btn {
+  animation: lil-blink 1.2s ease-in-out infinite;
 }
