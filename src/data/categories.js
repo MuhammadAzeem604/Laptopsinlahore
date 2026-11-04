@@ -75,15 +75,7 @@ export const categoriesList = [
     discount: 2000,
     discountType: "amount",
   },
-  {
-    id: 8,
-    name: "Microsoft Surface",
-    type: "laptop",
-    active: true,
-    image: micro,
-    discount: 2000,
-    discountType: "amount",
-  },
+ 
   {
     id: 9,
     name: "Razer",
@@ -99,6 +91,15 @@ export const categoriesList = [
     type: "laptop",
     active: true,
     image: samsung,
+    discount: 2000,
+    discountType: "amount",
+  },
+  {
+    id: 8,
+    name: "Microsoft Surface",
+    type: "laptop",
+    active: true,
+    image: micro,
     discount: 2000,
     discountType: "amount",
   },
