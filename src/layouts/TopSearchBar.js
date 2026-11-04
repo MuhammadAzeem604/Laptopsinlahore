@@ -35,7 +35,7 @@ export default function TopSearchBar({
             />
           </Link>
         </div>
-
+        
         <div className="header-center-custom">
           <div className="header-search-custom">
             <form className="search-form" onSubmit={handleSearch}>

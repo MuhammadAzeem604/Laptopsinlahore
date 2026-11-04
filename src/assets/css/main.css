@@ -749,6 +749,7 @@ blockquote.text-white cite span {
 }
 .header-middle {
   border-bottom: 0.1rem solid #f4f4f4;
+  height: 150px;
 }
 .header-middle .menu > li > a {
   letter-spacing: 0.01em;
@@ -3085,7 +3086,7 @@ p {
   background-color: #f5f6f9;
   margin-bottom: 0;
   letter-spacing: -0.01em;
-  padding: 10px;
+  padding: 6px 0;
 }
 .header-4 .header-top .container:after {
   display: none;
@@ -3120,7 +3121,8 @@ p {
 }
 .header-4 .header-middle {
   border-bottom: none;
-  margin-bottom: 0.1rem;
+  margin-bottom: 0;
+  padding: 10px 0;
 }
 .header-4 .header-search-extended {
   margin-top: 2.1rem;
