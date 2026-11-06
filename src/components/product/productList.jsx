@@ -28,6 +28,7 @@ export default function ProductList({ productType }) {
   const [priceRange, setPriceRange] = useState([0, 500_000]);
   const [categories, setCategories] = useState([]);
   const [productsList, setProductsList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [totalCount, setTotalCount] = useState(0);
   const [pagination, setPagination] = useState({
     ...defaultPagination,
@@ -71,6 +72,7 @@ export default function ProductList({ productType }) {
 
   useEffect(() => {
     const fetchProducts = async () => {
+      setIsLoading(true);
       const { list, paginationDetail } = await getProductsList(
         productType,
         search,
@@ -81,6 +83,7 @@ export default function ProductList({ productType }) {
       );
       setProductsList(list || []);
       setTotalCount(paginationDetail?.total || 0);
+      setIsLoading(false);
     };
     fetchProducts();
   }, [productType, search, selectedCategory, priceRange, sortBy, pagination]);
@@ -137,12 +140,18 @@ export default function ProductList({ productType }) {
                 totalCount={totalCount}
                 productsLength={productsList.length}
               />
-              <Product
-                productsList={productsList}
-                productTypeLabel={
-                  productType === categoryType.Laptop ? "Laptop" : "Accessories"
-                }
-              />
+              {isLoading ? (
+                <div style={{ display: "flex", justifyContent: "center", padding: "3rem 0" }}>
+                  <div style={{ width: 48, height: 48, border: "5px solid #ccc", borderTopColor: "#333", borderRadius: "50%", animation: "spin 1s linear infinite" }} />
+                </div>
+              ) : (
+                <Product
+                  productsList={productsList}
+                  productTypeLabel={
+                    productType === categoryType.Laptop ? "Laptop" : "Accessories"
+                  }
+                />
+              )}
               {productsList.length > 0 && (
                 <ProductPagination
                   pagination={pagination}

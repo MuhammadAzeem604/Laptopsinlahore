@@ -202,8 +202,9 @@ export default function ProductDetailView({ product }) {
                   <div className="product-specifications-list">
                     {specifications.map((spec) => (
                       <div className="product-detail-row product-spec-row" key={spec.label}>
-                        <label>{spec.label}</label>
+                        <label style={{ fontWeight: "bold" }}>{spec.label}:</label>
                         <span
+                          style={{ fontWeight: "normal" }}
                           className={
                             spec.value
                               ? "product-spec-value"
@@ -217,8 +218,8 @@ export default function ProductDetailView({ product }) {
 
                     {extraSpecifications.map(([attribute, value]) => (
                       <div className="product-detail-row product-spec-row" key={attribute}>
-                        <label>{attribute}</label>
-                        <span className="product-spec-value">{value}</span>
+                        <label style={{ fontWeight: "bold" }}>{attribute}:</label>
+                        <span className="product-spec-value" style={{ fontWeight: "normal" }}>{value}</span>
                       </div>
                     ))}
                   </div>

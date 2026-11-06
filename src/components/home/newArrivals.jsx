@@ -53,7 +53,15 @@ export default function NewArrivals() {
     };
   }, []);
 
-  if (!list.length) return null;
+  if (!list.length) {
+    return (
+      <section className="lil-section lil-section--tint lil-new-arrivals">
+        <div className="container" style={{ display: "flex", justifyContent: "center", padding: "3rem 0" }}>
+          <div style={{ width: 48, height: 48, border: "5px solid #ccc", borderTopColor: "#333", borderRadius: "50%", animation: "spin 1s linear infinite" }} />
+        </div>
+      </section>
+    );
+  }
 
   // Group products by type (Laptop first, then Accessories), then by category
   const typeMap = new Map();

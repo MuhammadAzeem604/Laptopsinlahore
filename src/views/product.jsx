@@ -42,7 +42,11 @@ export default function Product() {
 
   return (
     <main className="main">
-      {product && (
+      {!product ? (
+        <div style={{ display: "flex", justifyContent: "center", padding: "3rem 0" }}>
+          <div style={{ width: 48, height: 48, border: "5px solid #ccc", borderTopColor: "#333", borderRadius: "50%", animation: "spin 1s linear infinite" }} />
+        </div>
+      ) : (
         <>
           <ProductBreadCrumbs product={product} />
           <ProductDetailView product={product} />
