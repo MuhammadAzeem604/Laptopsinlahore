@@ -539,12 +539,13 @@ blockquote.text-white cite span {
 .header .container-fluid {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items:center;
 }
 .header-left,
 .header-center,
 .header-right {
   display: flex;
+  position: relative;
   align-items: center;
 }
 .header-right {
@@ -749,7 +750,7 @@ blockquote.text-white cite span {
 }
 .header-middle {
   border-bottom: 0.1rem solid #f4f4f4;
-  height: 140px;
+  height: 130px;
 }
 .header-middle .menu > li > a {
   letter-spacing: 0.01em;

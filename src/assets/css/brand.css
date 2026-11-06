@@ -31,8 +31,8 @@
 
 .header .logo img,
 .header .logo .site-logo {
-  width: 600px;
-  height: 120px;
+  width: 200px;
+  height: 80px;
   object-fit: contain;
   object-position: left center;
 }
@@ -693,11 +693,12 @@
   margin-bottom: 1.2rem;
   padding: 0.7rem 1rem;
   border-radius: 12px;
+  width: 300px;
 }
 .lil-footer__logo img {
   display: block;
   width: auto;
-  max-width: 300px;
+  min-width: 300px;
   height: 75px;
   object-fit: contain;
   object-position: left center;
