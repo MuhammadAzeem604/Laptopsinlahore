@@ -20,7 +20,13 @@ export const contactInfo = {
   whatsappUrl: "https://api.whatsapp.com/send?phone=923259008989",
 
   // Facebook page of the shop
-  facebookUrl: "https://www.facebook.com/laptopsinlahore",
+  facebookUrl: "https://www.facebook.com/share/1Ey1d949kg/?mibextid=wwXIfr",
+
+  // Instagram page of the shop
+  instagramUrl: "https://www.instagram.com/cc_laptop?cplk=MTRtemEyeHplNnQxMQ%3D%3D&utm_source=qr",
+
+  // TikTok page of the shop
+  tiktokUrl: "https://www.tiktok.com/@cc.laptop",
 
   // Shop locations shown in the footer
   locations: [

@@ -1,12 +1,12 @@
 import { contactInfo } from "../constants/contact";
-
+import '@fortawesome/fontawesome-free/css/all.min.css';
 /**
  * Top bar of the header: the phone number on the left and the social links
  * (facebook / whatsapp) on the right - same as the live site.
  */
 export default function TopContactBar() {
   return (
-    <div className="header-top">
+    <div className="header-top fixed-top-bar">
       <div className="container">
         <div className="header-left">
           <a href={contactInfo.phoneHref} title="Call us">
@@ -26,6 +26,29 @@ export default function TopContactBar() {
                 aria-label="Facebook"
               >
                 <i className="icon-facebook-f" />
+              </a>
+            </li>
+            <li>
+              <a
+                href={contactInfo.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Instagram"
+                aria-label="Instagram"
+              >
+                <i className="icon-instagram" />
+              </a>
+            </li>
+            <li>
+              <a
+                href={contactInfo.tiktokUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="TikTok"
+                aria-label="TikTok"
+              >
+                 <i className="fa-brands fa-tiktok"></i>
+
               </a>
             </li>
             <li>

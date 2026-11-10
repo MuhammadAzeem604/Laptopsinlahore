@@ -50,7 +50,8 @@ export default function PublicLayout() {
     <>
       <Header categories={categories} />
 
-      <Switch>
+      <main className="page-content">
+        <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path={HomePath} component={Home} />
         <Route exact path={LaptopsPath} component={Laptops} />
@@ -60,6 +61,7 @@ export default function PublicLayout() {
         <Route exact path="/product/:id" component={ProductDetail} />
         <Redirect to="/" />
       </Switch>
+      </main>
 
       <Footer categories={categories} />
       <FloatingContact />

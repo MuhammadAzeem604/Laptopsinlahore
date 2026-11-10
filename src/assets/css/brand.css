@@ -35,6 +35,7 @@
   height: 80px;
   object-fit: contain;
   object-position: left center;
+  margin-top: 12px;
 }
 
 /* ---------------------------------------------------------------- product image gallery auto-scroll */
@@ -266,7 +267,6 @@
   letter-spacing: 0.16em;
   color: var(--lil-green);
   background: var(--lil-light);
-  padding: 0.5rem 1.2rem;
   border-radius: 999px;
   margin-bottom: 1rem;
   width: fit-content;
@@ -698,8 +698,8 @@
 .lil-footer__logo img {
   display: block;
   width: auto;
-  min-width: 300px;
-  height: 75px;
+  width: 150px;
+  height: 120px;
   object-fit: contain;
   object-position: left center;
 }
@@ -707,6 +707,7 @@
   margin: 0 0 1.6rem;
   font-size: 1.45rem;
   line-height: 1.7;
+  color: grey;
 }
 .lil-footer__list {
   margin: 0;
@@ -857,6 +858,24 @@
   z-index: 1050;
   background-color: #fff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------------------------------------------------- fixed top bar (always visible) */
+
+.fixed-top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1060;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------------------------------------------------- page content padding for fixed top bar */
+
+.page-content {
+  padding-top: 45px; /* Height of the fixed top contact bar */
 }
 
 /* ------------------------------------------------------------- new arrivals horizontal rows */
@@ -1132,7 +1151,7 @@
     font-size: 0.95rem;
     margin-bottom: 0.5rem;
     padding: 0.3rem 0.9rem;
-  }
+    }
   .lil-hero__cta {
     margin-top: 0.6rem;
     font-size: 1.1rem;
