@@ -1165,7 +1165,7 @@ blockquote.text-white cite span {
 @media (max-width: 576px) {
   .header-4 .header-middle {
     border-bottom: none;
-    margin-bottom: 16rem !important;
+    margin-bottom: 0 !important;
   }
   .title {
     font-size: 3.5rem !important;
@@ -1184,6 +1184,9 @@ blockquote.text-white cite span {
     left: 0;
     top: 100%;
     margin-inline: auto;
+  }
+  .header-search-custom {
+    display: none;
   }
   .header-search-custom form {
     flex-direction: column;

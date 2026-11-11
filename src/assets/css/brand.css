@@ -844,10 +844,10 @@
   .lil-section__title {
     font-size: 2rem;
   }
-  .header .logo img,
+  /* .header .logo img,
   .header .logo .site-logo {
     height: 44px;
-  }
+  } */
 }
 
 /* ------------------------------------------------------------- sticky navbar */
