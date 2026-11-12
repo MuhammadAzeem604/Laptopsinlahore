@@ -1,8 +1,10 @@
+
 {
+    "$schema": "https://openapi.vercel.sh/vercel.json",
     "rewrites": [
       {
         "source": "/api/:path*",
-        "destination": "https://cclaptops.runasp.net/api/:path*"
+        "destination": "https://laptopsinlahore.runasp.net/api/:path*"
       },
       {
         "source": "/:path*",
@@ -10,3 +12,4 @@
       }
     ]
   }
+  
